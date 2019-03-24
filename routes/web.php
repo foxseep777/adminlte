@@ -31,9 +31,9 @@ Route::get('/home', 'HomeController@index');
 
 
 
-Route::resource('companies', 'CompanyController');
+Route::resource('companies', 'CompanyController')->middleware('auth');
 
 
 
 
-Route::resource('users', 'UserController');
+Route::resource('users', 'UserController')->middleware('auth');
