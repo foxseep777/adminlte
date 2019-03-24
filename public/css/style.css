@@ -68,6 +68,9 @@ form#month div {
     float: left;
     margin: 0 10px;
 }
+form#month {
+    min-height: 30px;
+}
 
 
 	#preloader_malc {
