@@ -51,8 +51,10 @@ class CompanyController extends AppBaseController
      */
     public function store(CreateCompanyRequest $request)
     {
-        $input = $request->all();
-
+	    $input = $request->all();
+		
+		!isset($input['quota']) ? : $input['quota'] = ($input['quota'] * 1099511531399);
+		
         $company = $this->companyRepository->create($input);
 
         Flash::success('Company saved successfully.');
