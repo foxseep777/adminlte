@@ -4,10 +4,11 @@
     {!! Form::text('user_name', null, ['class' => 'form-control']) !!}
 </div>
 
+
 <!-- Id Company Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('id_company', 'Id Company:') !!}
-    {!! Form::text('id_company', null, ['class' => 'form-control']) !!}
+    {!! Form::select('id_company', $companies, null,['class' => 'form-control']) !!}
 </div>
 
 <!-- Email Field -->

@@ -39,7 +39,14 @@ class UserController extends AppBaseController
      */
     public function create()
     {
-        return view('users.create');
+		$companies = \DB::table('companies')->select('companies.id','companies.name')->where('deleted_at','=',null)->get();	
+		foreach($companies as $k=>$comp){
+			$r[$comp->id] = $comp->name;
+		}
+	//	echo '<pre>';
+		//var_dump($r);
+	//	die;
+        return view('users.create',['companies' => $r]);
     }
 
     /**

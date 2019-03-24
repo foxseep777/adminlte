@@ -19,7 +19,7 @@
 Route::get('/', 'Users@index');
 Route::post('/adduser', 'Users@adduser');
 Route::post('/addcompany', 'Companies@addcompany');
-Route::get('/generate', 'Report@generateData');
+Route::get('/generate', 'Report@generateData')->middleware('auth');
 Route::get('/report', 'Report@report');
 Route::get('/reportAbusers', 'Report@reportListAbusers');
 Route::get('/companiesList', 'Companies@index');

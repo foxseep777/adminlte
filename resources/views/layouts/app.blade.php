@@ -26,6 +26,8 @@
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">
+	<link  href="{{URL::asset('css/style.css') }}" rel="stylesheet" type="text/css" />
+
 
     @yield('css')
 </head>
@@ -96,6 +98,11 @@
         @include('layouts.sidebar')
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
+		<div id="preloader_malc" style="display:none">
+			<div>
+				Please wait, data is generated ...
+			</div>
+		</div>	
             @yield('content')
         </div>
 
@@ -128,7 +135,7 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{!! url('/home') !!}">Home</a></li>
+                    <li><a href="{!! url('/companies') !!}">Home</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -163,6 +170,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/iCheck/1.0.2/icheck.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.min.js"></script>
+		<script src="{{URL::asset('js/myApp.js') }}"></script>
 
     @yield('scripts')
 </body>
